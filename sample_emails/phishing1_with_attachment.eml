@@ -1,0 +1,23 @@
+From: fakebank@example.com
+To: victim@example.com
+Subject: Urgent: Account Verification Needed
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary99"
+
+--boundary99
+Content-Type: text/plain
+
+Dear Customer,
+
+We detected unusual activity in your account. Please open the attached document and follow the instructions.
+
+FakeBank Security
+
+--boundary99
+Content-Type: application/pdf; name="verify_account.pdf"
+Content-Disposition: attachment; filename="verify_account.pdf"
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKJaqrrK0KICBTb21lIGZha2UgZG9jdW1lbnQ=
+
+--boundary99--

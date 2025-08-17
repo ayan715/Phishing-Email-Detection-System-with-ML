@@ -1,0 +1,14 @@
+From: Microsoft Account Team <no-reply@micr0soft.com>
+To: you@example.com
+Subject: Password reset required immediately
+Date: Tue, 12 Aug 2025 08:12:00 +0800
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<html>
+  <body>
+    <p>Your Microsoft account has been locked due to suspicious sign-in attempts.</p>
+    <p>Reset your password now: <a href="https://login.security.microsoft.com-help.xyz/reset?token=deadbeef">Reset Password</a></p>
+    <p>If you did not request this, please ignore.</p>
+  </body>
+</html>

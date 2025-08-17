@@ -1,0 +1,25 @@
+From: it-support@example.com
+To: victim@example.com
+Subject: Password Reset Required
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary77"
+
+--boundary77
+Content-Type: text/html
+
+<html>
+<body>
+<p>Dear User,</p>
+<p>Your account password has expired. Please <a href="http://malicious-phish.com/reset">click here</a> to reset it.</p>
+<p>IT Support</p>
+</body>
+</html>
+
+--boundary77
+Content-Type: application/vnd.ms-excel; name="reset_instructions.xls"
+Content-Disposition: attachment; filename="reset_instructions.xls"
+Content-Transfer-Encoding: base64
+
+UmVhbGx5IGZha2UgZXhjZWwgY29udGVudA==
+
+--boundary77--

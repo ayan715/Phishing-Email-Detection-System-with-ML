@@ -1,0 +1,26 @@
+From: hr@example.com
+To: employee@example.com
+Subject: Your Monthly Payslip
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary42"
+
+--boundary42
+Content-Type: text/plain
+
+Hi,
+
+Please find attached your payslip for this month.
+
+Thanks,
+HR
+
+--boundary42
+Content-Type: application/pdf; name="payslip.pdf"
+Content-Disposition: attachment; filename="payslip.pdf"
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKJaqrrK0KNCAwIG9iago8PC9UeXBlIC9QYWdlL0NvbnRlbnRzIDUgMCBSL1BhcmVudCAz
+IDAgUgovUmVzb3VyY2VzIDw8L0ZvbnQgPDwvRjEgNiAwIFI+Pi9Qcm9jU2V0IDIgMCBSPj4vTWVkaWFC
+b3ggWzAgMCA2MTIgNzkyXT4+CmVuZG9iago=
+
+--boundary42--

@@ -1,0 +1,30 @@
+From: "PayPal Support" <alerts@pp-secure.com>
+Reply-To: "PayPal Support" <helpdesk@secure-paypal-support.com>
+To: you@example.com
+Subject: Urgent: Unusual Activity Detected — verify your account now
+Date: Mon, 11 Aug 2025 10:07:00 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="abc123"
+
+--abc123
+Content-Type: text/plain; charset="utf-8"
+
+Dear Customer,
+We've noticed unusual activity on your PayPal account. Please verify your account to avoid suspension:
+https://pp-secure.com/login/verify?session=abc123456789
+Thank you,
+PayPal Security
+
+--abc123
+Content-Type: text/html; charset="utf-8"
+
+<html>
+  <body>
+    <p>Dear Customer,</p>
+    <p>We've noticed <b>unusual activity</b> on your <b>PayPal</b> account.</p>
+    <p>Please <a href="http://pp-secure.com/login/verify?session=abc123456789">verify your account</a> immediately to avoid suspension.</p>
+    <p>Thank you,<br/>PayPal Security</p>
+  </body>
+</html>
+
+--abc123--

@@ -1,0 +1,8 @@
+Flask>=2.0
+beautifulsoup4
+lxml
+joblib
+scikit-learn
+requests
+selenium
+webdriver-manager

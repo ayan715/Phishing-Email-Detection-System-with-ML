@@ -1,0 +1,58 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phishing Analyzer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="mb-3">Phishing Analyzer</h1>
+    <p class="text-muted">Upload .eml files or paste email text/HTML to analyze using your RandomForest model.</p>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>Upload .eml files</h5>
+        <form action="{{ url_for('analyze_upload') }}" method="post" enctype="multipart/form-data">
+          <div class="mb-2">
+            <input class="form-control" type="file" name="eml_files" accept=".eml" multiple>
+          </div>
+          <button class="btn btn-primary" type="submit">Analyze uploads</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>Paste raw email</h5>
+        <form action="{{ url_for('analyze_text_route') }}" method="post">
+          <div class="mb-2">
+            <input class="form-control" type="text" name="subject" placeholder="Subject">
+          </div>
+          <div class="mb-2 row">
+            <div class="col">
+              <input class="form-control" type="text" name="from_addr" placeholder="From:">
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" name="reply_to" placeholder="Reply-To:">
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Plain text</label>
+            <textarea class="form-control" name="text_body" rows="6"></textarea>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">HTML (optional)</label>
+            <textarea class="form-control" name="html_body" rows="6" placeholder="<a href='https://...'>link</a>"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Analyze pasted email</button>
+        </form>
+      </div>
+    </div>
+
+    <p class="text-muted small">Download last analysis summary: <a href="{{ url_for('download_summary') }}">summary.csv</a></p>
+  </div>
+</body>
+</html>

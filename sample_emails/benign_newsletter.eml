@@ -1,0 +1,25 @@
+From: "Tech Newsletter" <newsletter@example.org>
+To: you@example.com
+Subject: August Dev Tips — free tools and resources
+Date: Wed, 13 Aug 2025 13:30:00 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="bcd234"
+
+--bcd234
+Content-Type: text/plain; charset="utf-8"
+
+Hello! Here are some helpful dev tools for August. Visit:
+https://example.org/blog/august-tools
+Enjoy!
+--bcd234
+Content-Type: text/html; charset="utf-8"
+
+<html>
+  <body>
+    <p>Hello! Here are some helpful dev tools for August.</p>
+    <p>Visit: <a href="https://example.org/blog/august-tools">our blog post</a></p>
+    <p>Enjoy!</p>
+  </body>
+</html>
+
+--bcd234--

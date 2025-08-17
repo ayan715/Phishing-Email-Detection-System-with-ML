@@ -1,0 +1,91 @@
+<!-- templates/result.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Analysis results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="mb-3">Analysis results</h1>
+
+    {% for r in results %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ r.subject or r.file or "Untitled" }}</h5>
+          {% if r.error %}
+            <div class="alert alert-danger">Error: {{ r.error }}</div>
+          {% else %}
+            <p><strong>From:</strong> {{ r.from }}</p>
+            <p><strong>Reply-To:</strong> {{ r.reply_to }}</p>
+            <p><strong>Risk:</strong> <span class="badge bg-{{ 'danger' if r.risk == 'HIGH' else 'warning' if r.risk=='MEDIUM' else 'success' }}">{{ r.risk }}</span>
+               &nbsp; <strong>Score:</strong> {{ r.score }} &nbsp; <strong>ML:</strong> {{ r.ml_prediction }}</p>
+
+            <h6>Top reasons</h6>
+            <ul>
+              {% for rr in r.email_reasons %}
+                <li>{{ rr }}</li>
+              {% endfor %}
+              {% if not r.email_reasons %}
+                <li>None</li>
+              {% endif %}
+            </ul>
+
+            <h6>URLs ({{ r.num_urls }})</h6>
+            <ul>
+              {% for ur in r.url_reasons %}
+                <li>
+                  <strong>{{ ur.url }}</strong>
+                  <ul>
+                    {% for reason in ur.reasons %}
+                      <li>{{ reason }}</li>
+                    {% endfor %}
+                    {% if ur.sandbox %}
+                      {% if ur.sandbox.error %}
+                        <li>Sandbox error: {{ ur.sandbox.error }}</li>
+                      {% endif %}
+                      {% if ur.sandbox.final_url %}
+                        <li>Final URL: {{ ur.sandbox.final_url }}</li>
+                      {% endif %}
+                      {% if ur.sandbox.page_title %}
+                        <li>Page title: {{ ur.sandbox.page_title }}</li>
+                      {% endif %}
+                    {% endif %}
+                  </ul>
+                </li>
+              {% endfor %}
+              {% if not r.url_reasons %}
+                <li>No URLs found</li>
+              {% endif %}
+            </ul>
+
+            <h6>Attachments</h6>
+            <ul>
+              {% for a in r.attachments %}
+                <li>{{ a.filename or 'Unknown' }} {% if a.suspicious %} <span class="text-danger">⚠️ Suspicious</span>{% endif %}</li>
+              {% endfor %}
+              {% if not r.attachments %}
+                <li>None</li>
+              {% endif %}
+            </ul>
+
+            <h6>Script warnings</h6>
+            <ul>
+              {% for s in r.script_warnings %}
+                <li>{{ s }}</li>
+              {% endfor %}
+              {% if not r.script_warnings %}
+                <li>None</li>
+              {% endif %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <a class="btn btn-secondary" href="{{ url_for('index') }}">Back</a>
+  </div>
+</body>
+</html>
