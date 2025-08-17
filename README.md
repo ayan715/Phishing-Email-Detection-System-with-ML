@@ -59,26 +59,30 @@ phishing_email_analysis_lite/
 ├── uploads/                # Uploaded emails (runtime)
 └── reports/                # Generated reports
 
-How to run(Can vary for everyone)
+-How to run(Can vary for everyone)
 
-1)
-git clone https://github.com/yourusername/Phishing-Email-Detection-System-with-ML.git
+1) git clone https://github.com/yourusername/Phishing-Email-Detection-System-with-ML.git
 cd Phishing-Email-Detection-System-with-ML
 
-2)
-python -m venv venv
+2) python -m venv venv
 
 Activate it:
 PowerShell: .\venv\Scripts\Activate.ps1
 CMD: venv\Scripts\activate.bat
 
-3)
-pip install -r requirements.txt
+3) pip install -r requirements.txt
 
-4)
-Run Application
+4) Run Application
 python app.py
 Then open: http://127.0.0.1:5000/
+
+-Manual Deployment Steps
+
+1) Copy Phishing_analyzer.py, train_ml_model.py, index.html(in template folder), result.html(in template folder), app.py
+2) Download all prerequisites and libraries
+3) Download csv file as dataset
+4) Give path in train_ml_model.py to train model
+5) After model is trained on your system just run app.py as shown above then open http://127.0.0.1:5000
 
 🎯 Future Improvements
 
