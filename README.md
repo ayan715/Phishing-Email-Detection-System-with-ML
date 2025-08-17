@@ -46,3 +46,57 @@ scikit-learn (for ML model training & inference)
 BeautifulSoup4 + lxml (for HTML parsing)
 
 Joblib (for loading trained models)
+
+Project Structure
+phishing_email_analysis_lite/
+│
+├── app.py                  # Flask web application(Backend)
+├── phishing_analyzer.py    # Core phishing analysis logic
+├── train_ml_model.py       # ML model Random Forest Script
+├── phishing_model.pkl      # Trained Random Forest model
+├── vectorizer.pkl          # TF-IDF vectorizer
+├── templates/              # HTML templates (index + results)(Frontend)
+├── uploads/                # Uploaded emails (runtime)
+└── reports/                # Generated reports
+
+How to run(Can vary for everyone)
+
+1)
+git clone https://github.com/yourusername/Phishing-Email-Detection-System-with-ML.git
+cd Phishing-Email-Detection-System-with-ML
+
+2)
+python -m venv venv
+
+Activate it:
+PowerShell: .\venv\Scripts\Activate.ps1
+CMD: venv\Scripts\activate.bat
+
+3)
+pip install -r requirements.txt
+
+4)
+Run Application
+python app.py
+Then open: http://127.0.0.1:5000/
+
+🎯 Future Improvements
+
+Expand ML model with larger phishing datasets
+
+Add support for additional file formats (e.g., .msg)
+
+Integrate email header authenticity checks (SPF/DKIM/DMARC)
+
+Dockerize for easier deployment
+
+✨ This project was built as a demonstration of Machine Learning in cybersecurity — showing how ML and heuristics can work together to protect against phishing.
+
+
+
+
+
+
+
+
+
